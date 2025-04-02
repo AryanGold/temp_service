@@ -1,0 +1,7 @@
+asyncio==3.4.3
+websockets==15.0.1
+PyYAML==6.0.2
+requests==2.32.3
+pandas==2.2.3
+scipy==1.15.2
+py-vollib-vectorized==0.1.1

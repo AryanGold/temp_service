@@ -1,0 +1,14 @@
+# Service configureation
+
+service: 
+    service_name: "data-agent"
+
+# Settings for DataReceiver module
+data_receiver:
+    # Delay before start new request in seconds (frequency for data getter).
+    fetch_data_delay: 1.5
+
+data_providers:
+    theta_data:
+        conf_file: "ThetaData.yaml"
+
