@@ -3,12 +3,35 @@
 service: 
     service_name: "data-agent"
 
+logging:
+  level: INFO # DEBUG, INFO, WARNING, ERROR
+
 # Settings for DataReceiver module
 data_receiver:
     # Delay before start new request in seconds (frequency for data getter).
     fetch_data_delay: 1.5
 
+# Configuration for data providers
 data_providers:
-    theta_data:
+    default: ThetaData # Which provider class to load by default
+    ThetaData: # Specific settings for ThetaData
         conf_file: "ThetaData.yaml"
+
+# List of supported models and their default settings
+models:
+  - name: "SSVI"
+    settings: {} # Default settings for SSVI model instances
+      # volatility_adjustment: 0.01 # Example setting
+  - name: "CustomModel"
+    settings: {}
+      # custom_param: 123
+
+# Service host/port
+server:
+  host: "0.0.0.0"
+  port: 8765
+
+# DataProcessor settings
+processor:
+  calibration_interval_seconds: 3 # How often to run heavy calibration in seconds
 
